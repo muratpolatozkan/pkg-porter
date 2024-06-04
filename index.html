@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pkg-porter - Custom Proxy for Private NPM Registries</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description"
+        content="pkg-porter is a custom proxy server for accessing packages from private NPM registries, offering a self-hosted alternative to services like jsdelivr and unpkg.">
+    <meta name="keywords"
+        content="npm, proxy server, private npm registry, caching, logging, package manager, jsdelivr alternative, unpkg alternative">
+    <meta name="author" content="muratpolatozkan">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for social media -->
+    <meta property="og:title" content="pkg-porter - Custom Proxy for Private NPM Registries">
+    <meta property="og:description"
+        content="A custom proxy server for accessing packages from private NPM registries, providing caching and logging functionalities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/muratpolatozkan/pkg-porter">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="pkg-porter - Custom Proxy for Private NPM Registries">
+    <meta name="twitter:description"
+        content="A custom proxy server for accessing packages from private NPM registries, providing caching and logging functionalities.">
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-6">
+        <header class="mb-6">
+            <h1 class="text-4xl font-bold text-center text-blue-600">pkg-porter</h1>
+            <p class="text-center text-lg mt-2">A custom proxy server for private NPM registries</p>
+        </header>
+        <main>
+            <section class="mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">Features</h2>
+                <ul class="list-disc list-inside ml-4 mt-2">
+                    <li>Proxy access to private NPM registries</li>
+                    <li>Local caching for improved performance</li>
+                    <li>Optional logging and database usage</li>
+                    <li>Configurable through environment variables</li>
+                </ul>
+            </section>
+            <section class="mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">Setup</h2>
+                <p class="mt-2">To get started, follow these steps:</p>
+                <ol class="list-decimal list-inside ml-4 mt-2">
+                    <li>Clone the repository: <code
+                            class="bg-gray-200 p-1 rounded">git clone https://github.com/muratpolatozkan/pkg-porter.git</code>
+                    </li>
+                    <li>Navigate to the project directory: <code class="bg-gray-200 p-1 rounded">cd pkg-porter</code>
+                    </li>
+                    <li>Install the dependencies: <code class="bg-gray-200 p-1 rounded">npm install</code></li>
+                    <li>Create a <code class="bg-gray-200 p-1 rounded">.env</code> file with the necessary
+                        configuration:</li>
+                </ol>
+                <pre class="bg-gray-800 text-white p-4 rounded mt-2">
+                    # Registry URL and credentials
+                    REGISTRY_URL=https://your-registry-url
+                    USERNAME=your-username
+                    PASSWORD=your-password
+                 
+                    # Cache settings
+                    USE_CACHE=true
+                 
+                    # Server settings
+                    URL=http://localhost
+                    PORT=8081
+                 
+                    # Database usage (set to true if you want to use the database)
+                    USE_DB=true
+                 
+                    # Logger usage (set to true if you want to enable logging)
+                    USE_LOGGER=true
+                </pre>
+                <li>Start the server: <code class="bg-gray-200 p-1 rounded">npm start</code></li>
+                </ol>
+            </section>
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-700">Usage</h2>
+                <p class="mt-2">Once the server is running, you can use the proxy server to access packages from your
+                    private NPM registry. For example:</p>
+                <pre class="bg-gray-800 text-white p-4 rounded mt-2">
+http://localhost:8081/@scope/package@version/path/to/file
+                </pre>
+                <p class="mt-2">Replace <code>@scope/package</code> with your package name, <code>version</code> with
+                    the package version, and <code>path/to/file</code> with the path to the specific file you need.</p>
+            </section>
+        </main>
+        <footer class="mt-12 text-center text-sm text-gray-500">
+            <p>&copy; 2024 pkg-porter. Not affiliated with npm, Inc., unpkg, or jsdelivr. For issues with npm packages,
+                please contact npm support.</p>
+            <p>GitHub Project: <a href="https://github.com/muratpolatozkan/pkg-porter"
+                    class="text-blue-600">https://github.com/muratpolatozkan/pkg-porter</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
