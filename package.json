@@ -2,10 +2,13 @@
   "name": "pkg-porter",
   "version": "1.0.0",
   "description": "A custom proxy server for private and public npm registries",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --inspect=5858 --exec babel-node src/server.js",
+    "build": "babel src -d dist --copy-files",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm run build"
   },
   "keywords": [
     "private-registry",
@@ -26,6 +29,13 @@
     "winston": "^3.13.0",
     "winston-daily-rotate-file": "^5.0.0",
     "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.2",
+    "@babel/node": "^7.17.1",
+    "@babel/preset-env": "^7.17.1",
+    "nodemon": "^2.0.15"
   },
   "optionalDependencies": {
     "mongodb": "^6.7.0",
