@@ -39,4 +39,4 @@ jobs:
         USE_DB: ${{ secrets.USE_DB }}
         USE_LOGGER: ${{ secrets.USE_LOGGER }}
       run: |
-        npm 
+        npm run deploy
