@@ -2,13 +2,13 @@
   "name": "pkg-porter",
   "version": "1.0.0",
   "description": "A custom proxy server for private and public npm registries",
-  "main": "src/server.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node ./src/server.js",
-    "dev": "nodemon --inspect=5858 --exec babel-node src/server.js",
+    "start": "node ./src/index.js",
+    "dev": "nodemon --inspect=5858 --exec babel-node src/index.js",
     "build": "babel src -d dist --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "node ./dist/server.js",
+    "deploy": "node ./dist/index.js",
     "prestart": "npm run build"
   },
   "keywords": [
@@ -17,7 +17,7 @@
     "package-manager"
   ],
   "author": "Murat Polat Özkan",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.7.2",
     "cors": "^2.8.5",
